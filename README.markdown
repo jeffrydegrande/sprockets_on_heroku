@@ -21,10 +21,15 @@ and install the plugin
 
 If you want your javascript minified using jsmin, make sure to add it to your .gems as well.
 
+## Configuration
+To set a different uri than the default /sprockets.js
+create initializers/sprockets.rb and add:
+
+  SprocketsOnHeroku.uri = '/custom_uri.js'
+
 ## Todo
 
 * no support for assets
-* hardcoded to '/sprockets.js', but so does sprockets-rails so 
 * sprockets:install_scripts & sprockets:install_assets are no longer available
 
 [sass]: http://github.com/heroku/sass_on_heroku

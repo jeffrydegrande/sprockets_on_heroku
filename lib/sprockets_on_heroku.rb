@@ -1,5 +1,5 @@
 class SprocketsOnHeroku
-
+  
   def self.original_sprockets_location
     @@original_sprockets_location ||= nil
   end
@@ -8,13 +8,21 @@ class SprocketsOnHeroku
     @@original_sprockets_location = location
   end
 
+  def self.uri
+    @@uri ||= '/sprockets.js'
+  end
+
+  def self.uri=(uri)
+    @@uri = uri
+  end
+  
   def initialize(app)
     @app = app
     initialize_sprockets unless self.class.original_sprockets_location
   end
 
   def call(env)
-    if env['REQUEST_URI'] == "/sprockets.js"
+    if env['REQUEST_URI'] == self.class.uri
       return render_sprockets
     end
     @app.call(env)

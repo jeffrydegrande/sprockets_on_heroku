@@ -23,7 +23,7 @@ If you want your javascript minified using jsmin, make sure to add it to your .g
 
 ## Configuration
 To set a different uri than the default /sprockets.js
-create initializers/sprockets.rb and add:
+create config/initializers/sprockets.rb containing:
 
   SprocketsOnHeroku.uri = '/custom_uri.js'
 

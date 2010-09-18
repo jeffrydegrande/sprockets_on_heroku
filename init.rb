@@ -1,1 +1,1 @@
-ActionController::Dispatcher.middleware.use SprocketsOnHeroku
+Rails.application.config.middleware.use SprocketsOnHeroku

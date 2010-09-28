@@ -22,7 +22,7 @@ class SprocketsOnHeroku
   end
 
   def call(env)
-    if env['REQUEST_URI'] == self.class.uri
+    if env['PATH_INFO'] == self.class.uri
       return render_sprockets
     end
     @app.call(env)
